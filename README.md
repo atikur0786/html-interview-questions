@@ -10,23 +10,23 @@ A curated list of HTML interview questions and answers.
 
 ## Table of Contents
 
-| No. | Questions                                                                                                                                            |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | [What is HTML and what does it stand for?](#what-is-html-and-what-does-it-stand-for)                                                                 |
-| 2   | [What are the new features in HTML5?](#what-are-the-new-features-in-html5)                                                                           |
-| 3   | [What is the difference between HTML elements and tags?](#what-is-the-difference-between-html-elements-and-tags)                                     |
-| 4   | [What is semantic HTML and why is it important?](#what-is-semantic-html-and-why-is-it-important)                                                     |
-| 5   | [Explain the difference between block and inline elements](#explain-the-difference-between-block-and-inline-elements)                                |
-| 6   | [What is the purpose of the DOCTYPE declaration?](#what-is-the-purpose-of-the-doctype-declaration)                                                   |
-| 7   | [What are void elements in HTML?](#what-are-void-elements-in-html)                                                                                   |
-| 8   | [Explain the importance of the alt attribute for images](#explain-the-importance-of-the-alt-attribute-for-images)                                    |
-| 9   | [What is the difference between localStorage, sessionStorage, and cookies?](#what-is-the-difference-between-localstorage-sessionstorage-and-cookies) |
-| 10  | [How do you embed audio and video in a webpage?](#how-do-you-embed-audio-and-video-in-a-webpage)                                                     |
-| 11  | [Explain the Canvas element and its use cases](#explain-the-canvas-element-and-its-use-cases)                                                        |
-| 12  | [What are data attributes and how are they useful?](#what-are-data-attributes-and-how-are-they-useful)                                               |
-| 13  | [What is the purpose of the srcset attribute in images?](#what-is-the-purpose-of-the-srcset-attribute-in-images)                                     |
-| 14  | [Explain the difference between SVG and Canvas](#explain-the-difference-between-svg-and-canvas)                                                      |
-| 15  | [What are Web Components?](#what-are-web-components)                                                                                                 |
+| No. | Questions                                                                                                                                              |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | [What is HTML and what does it stand for?](#1-what-is-html-and-what-does-it-stand-for)                                                                 |
+| 2   | [What are the new features in HTML5?](#2-what-are-the-new-features-in-html5)                                                                           |
+| 3   | [What is the difference between HTML elements and tags?](#3-what-is-the-difference-between-html-elements-and-tags)                                     |
+| 4   | [What is semantic HTML and why is it important?](#4-what-is-semantic-html-and-why-is-it-important)                                                     |
+| 5   | [Explain the difference between block and inline elements](#5-explain-the-difference-between-block-and-inline-elements)                                |
+| 6   | [What is the purpose of the DOCTYPE declaration?](#6-what-is-the-purpose-of-the-doctype-declaration)                                                   |
+| 7   | [What are void elements in HTML?](#7-what-are-void-elements-in-html)                                                                                   |
+| 8   | [Explain the importance of the alt attribute for images](#8-explain-the-importance-of-the-alt-attribute-for-images)                                    |
+| 9   | [What is the difference between localStorage, sessionStorage, and cookies?](#9-what-is-the-difference-between-localstorage-sessionstorage-and-cookies) |
+| 10  | [How do you embed audio and video in a webpage?](#10-how-do-you-embed-audio-and-video-in-a-webpage)                                                    |
+| 11  | [Explain the Canvas element and its use cases](#11-explain-the-canvas-element-and-its-use-cases)                                                       |
+| 12  | [What are data attributes and how are they useful?](#12-what-are-data-attributes-and-how-are-they-useful)                                              |
+| 13  | [What is the purpose of the srcset attribute in images?](#13-what-is-the-purpose-of-the-srcset-attribute-in-images)                                    |
+| 14  | [Explain the difference between SVG and Canvas](#14-explain-the-difference-between-svg-and-canvas)                                                     |
+| 15  | [What are Web Components?](#15-what-are-web-components)                                                                                                |
 
 ## 1. What is HTML and what does it stand for?
 
