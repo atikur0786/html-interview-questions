@@ -966,4 +966,154 @@ The `<video>` element works similarly but includes width, height, and poster (th
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
+
+## 11. Explain the `<canvas>` element and its use cases
+
+The HTML5 `<canvas>` element is used to draw graphics, animations, and other visual content on the fly using JavaScript. It acts as a **blank drawing surface** with no predefined content, and everything must be drawn dynamically via code.
+
 ---
+
+### 📐 Basic Syntax
+
+```html
+<canvas id="myCanvas" width="300" height="150"></canvas>
+```
+
+You interact with it using JavaScript like so:
+
+```javascript
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+ctx.fillStyle = "red";
+ctx.fillRect(10, 10, 100, 50); // Draws a red rectangle
+```
+
+---
+
+### 🎯 Key Features
+
+- Resolution-independent drawing
+- Pixel-based rendering (unlike SVG which is vector-based)
+- Provides 2D and WebGL (3D) rendering contexts
+- Can export the drawing as an image
+- Can be animated and updated frame-by-frame
+
+---
+
+### 💡 Common Use Cases
+
+| Use Case               | Description                                                      |
+| ---------------------- | ---------------------------------------------------------------- |
+| **Data Visualization** | Drawing charts/graphs manually or with libraries (e.g. Chart.js) |
+| **Games**              | 2D/3D games where pixel-level control is needed                  |
+| **Image Manipulation** | Applying filters, cropping, or rendering effects                 |
+| **Drawing Tools**      | Freehand sketching apps (e.g. whiteboards, paint tools)          |
+| **Custom Animations**  | Create complex animations without relying on CSS/DOM             |
+| **Simulations**        | Particle effects, physics simulations, real-time rendering       |
+
+---
+
+### 🧠 Example: Drawing a Circle
+
+```html
+<canvas id="circleCanvas" width="200" height="200"></canvas>
+
+<script>
+  const canvas = document.getElementById("circleCanvas");
+  const ctx = canvas.getContext("2d");
+
+  ctx.beginPath();
+  ctx.arc(100, 100, 50, 0, 2 * Math.PI); // x, y, radius, startAngle, endAngle
+  ctx.fillStyle = "blue";
+  ctx.fill();
+</script>
+```
+
+---
+
+### 🚫 Limitations
+
+- Not SEO-friendly (everything is rendered as pixels)
+- Accessibility requires custom implementation
+- Requires JavaScript to function — HTML alone cannot render anything on `<canvas>`
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## 12. What are data attributes and how are they useful?
+
+### ✅ What Are Data Attributes?
+
+`data-*` attributes are **custom attributes** introduced in HTML5 that allow you to store **extra data** on any HTML element without using JavaScript or altering the structure or appearance of the content.
+
+They follow the format:
+
+```html
+data-<name>="value"</name>
+```
+
+✅ Example:
+
+```html
+<div data-user-id="42" data-role="admin">John Doe</div>
+```
+
+- `data-user-id` is a custom attribute.
+- `42` is the value associated with it.
+- This data is not displayed to the user but can be accessed by JavaScript.
+
+---
+
+### 🧠 Why Are They Useful?
+
+#### 1. **Encapsulating Metadata**
+
+Data attributes let you attach **meta information** to elements — like IDs, states, configuration values — without changing the structure or appearance of the element.
+
+#### 2. **JavaScript Interaction**
+
+You can easily access or manipulate `data-*` attributes using JavaScript via the `.dataset` property.
+
+```javascript
+const element = document.querySelector("[data-user-id]");
+console.log(element.dataset.userId); // "42"
+```
+
+This makes them especially useful when you’re:
+
+- Tracking element states
+- Assigning IDs
+- Passing info between HTML and JavaScript without complex logic
+
+#### 3. **Clean & Valid HTML**
+
+Unlike using non-standard attributes (e.g. `custom-id`), `data-*` attributes are **100% valid HTML5** and won't cause validation issues.
+
+---
+
+### ✅ Real-world Example: Toggle Button
+
+```html
+<button data-toggle-state="off">Toggle</button>
+
+<script>
+  const btn = document.querySelector("button");
+  btn.addEventListener("click", () => {
+    const currentState = btn.dataset.toggleState;
+    const newState = currentState === "off" ? "on" : "off";
+    btn.dataset.toggleState = newState;
+    btn.textContent = `Toggle (${newState})`;
+  });
+</script>
+```
+
+In this example:
+
+- We use `data-toggle-state` to track whether the toggle is "on" or "off".
+- No need to maintain state in a separate variable.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
