@@ -1183,3 +1183,178 @@ You should always include a fallback `src` attribute — it’s used by browsers
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
+
+## 14. Explain the Difference Between SVG and Canvas
+
+When it comes to rendering graphics in web applications, **SVG** and **Canvas** are two important technologies supported natively by modern browsers. Though both are used for drawing graphics, they are fundamentally different in how they work and when you should use them.
+
+---
+
+### 🖼️ What is SVG (Scalable Vector Graphics)?
+
+- **SVG** is an **XML-based vector image format** for defining two-dimensional graphics.
+- SVG graphics are made of **shapes (lines, circles, rectangles, paths)**, **text**, and **images**, all described in the DOM.
+- Since SVG is **vector-based**, the graphics **scale perfectly** at any resolution without losing quality.
+
+#### Example:
+
+```html
+<svg width="200" height="200">
+  <circle cx="100" cy="100" r="80" fill="blue" />
+</svg>
+```
+
+This creates a blue circle inside an SVG canvas.
+
+---
+
+### 🎨 What is Canvas?
+
+- **Canvas** is an **HTML5 element** used for drawing graphics **via scripting (usually JavaScript)**.
+- Canvas renders graphics **pixel by pixel** — it's **bitmap-based**.
+- Once something is drawn on the canvas, it becomes part of the canvas and **can't be individually manipulated** via the DOM.
+
+#### Example:
+
+```html
+<canvas id="myCanvas" width="200" height="200"></canvas>
+
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "blue";
+  ctx.beginPath();
+  ctx.arc(100, 100, 80, 0, Math.PI * 2);
+  ctx.fill();
+</script>
+```
+
+This draws a blue circle inside the canvas.
+
+---
+
+## 🔥 Key Differences Between SVG and Canvas
+
+| Feature             | SVG                                                                                             | Canvas                                                                          |
+| :------------------ | :---------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------ |
+| **Type**            | Vector-based (shapes and paths)                                                                 | Raster-based (pixels)                                                           |
+| **DOM Integration** | Each element (rect, circle, path) is part of the DOM and can be styled or scripted individually | Canvas is a single DOM element — graphics are drawn inside it via JavaScript    |
+| **Scalability**     | Infinitely scalable without losing quality                                                      | Scaling can cause blurring because it is pixel-based                            |
+| **Performance**     | Better for a small number of objects or static graphics                                         | Better for rendering many objects or frequent updates (games, real-time charts) |
+| **Interactivity**   | Easier: elements are part of the DOM and respond to CSS and JavaScript events                   | Harder: you must manually track object locations and events                     |
+| **Accessibility**   | SVG is accessible (screen readers can interpret SVG content)                                    | Canvas content is not accessible without additional work                        |
+| **Use Cases**       | Icons, diagrams, charts, maps                                                                   | Games, particle systems, real-time visualizations                               |
+
+---
+
+## ✅ When to Use SVG
+
+- You need **responsive, scalable graphics** (logos, UI icons).
+- You want to **style or animate** parts of the graphic using CSS or JS.
+- You need **searchable, accessible graphics**.
+- You have a **small or moderate number** of graphic objects.
+
+## ✅ When to Use Canvas
+
+- You’re creating **dynamic, high-performance graphics** (like games or live data visualizations).
+- You’re handling **large numbers of objects** or **real-time animations**.
+- You don’t need each drawn object to remain accessible or separately addressable.
+
+---
+
+### 📝 Quick Tip
+
+You can actually **combine** SVG and Canvas depending on the situation!  
+For example, you can use SVG for static UI elements and Canvas for dynamic animations inside the same application.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## 15. What are Web Components?
+
+**Web Components** are a set of modern browser standards that allow developers to create **reusable, encapsulated custom elements** — with their own structure, style, and behavior — that can be used in any web page or app, **without relying on external libraries or frameworks**.
+
+They help in **building UI components** that are **self-contained** and **framework-agnostic**, meaning you can use them across different projects (even between React, Angular, Vue, or plain HTML apps).
+
+---
+
+### 📦 Web Components Are Based on 4 Main Technologies:
+
+| Feature             | Description                                                                                                                 |
+| :------------------ | :-------------------------------------------------------------------------------------------------------------------------- |
+| **Custom Elements** | Define your own HTML tags with custom behavior (e.g., `<user-profile>`).                                                    |
+| **Shadow DOM**      | Provides encapsulated DOM and CSS, so styles/scripts inside a component don’t affect the rest of the page (and vice versa). |
+| **HTML Templates**  | Define markup and content for a component using `<template>` and `<slot>`, which are rendered when needed.                  |
+| **ES Modules**      | JavaScript modules (`import`/`export`) are used to define and reuse component logic cleanly.                                |
+
+---
+
+### 🔧 Basic Example of a Web Component
+
+```html
+<!-- 1. HTML -->
+<user-greeting></user-greeting>
+
+<!-- 2. JavaScript -->
+<script>
+  class UserGreeting extends HTMLElement {
+    constructor() {
+      super();
+      const shadow = this.attachShadow({ mode: "open" });
+      shadow.innerHTML = `<p>Hello, Web Components! 🎉</p>`;
+    }
+  }
+
+  customElements.define("user-greeting", UserGreeting);
+</script>
+```
+
+✅ Now `<user-greeting>` is a **custom element** — like any native HTML tag!
+
+---
+
+### 🧠 Why Use Web Components?
+
+- **Encapsulation**: Styles and DOM are scoped inside the component (via Shadow DOM).
+- **Reusability**: Write once, use anywhere — even across different frameworks.
+- **Native Performance**: No extra runtime needed (unlike React, Angular).
+- **Interoperability**: Perfect for design systems, micro-frontends, and shared UI libraries.
+- **Maintainability**: Components are modular and self-contained.
+
+---
+
+### 🛠️ Key Terms Explained
+
+| Term                | Meaning                                                                                      |
+| :------------------ | :------------------------------------------------------------------------------------------- |
+| **Custom Elements** | Create custom HTML elements and define their behavior.                                       |
+| **Shadow DOM**      | Create a hidden DOM tree inside a component with its own scoped CSS and markup.              |
+| **HTML Template**   | Define reusable HTML structures that aren't rendered until used.                             |
+| **Slot**            | Placeholder inside a web component where external HTML can be injected (content projection). |
+
+---
+
+### ✅ Real-World Use Cases
+
+- Building a **design system** (button, card, modal components).
+- Developing **shared UI libraries** across projects and teams.
+- Creating **micro frontends** where different apps contribute components to a single UI.
+- Making widgets that can be **embedded** into any site (like Stripe's checkout, YouTube embeds).
+
+---
+
+### 🚨 Browser Support
+
+- Web Components are supported in **modern browsers** (Chrome, Edge, Firefox, Safari).
+- For older browsers (like IE11), you can use **polyfills**.
+
+---
+
+### 🔥 Quick Tip
+
+Even though Web Components are **framework-independent**, many modern frameworks (like Angular, Vue, and React) now provide **ways to integrate with Web Components** easily.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
