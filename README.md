@@ -1117,12 +1117,69 @@ In this example:
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
-<div align="right">
-    <b><a href="#table-of-contents">↥ back to top</a></b>
-</div>
-<div align="right">
-    <b><a href="#table-of-contents">↥ back to top</a></b>
-</div>
+
+## 13. What is the purpose of the `srcset` attribute in images?
+
+The `srcset` attribute in HTML allows developers to provide **multiple versions of an image** so that the browser can choose the most appropriate one based on the user's **device resolution** or **viewport size**. This technique is part of **responsive web design**, helping deliver optimized images for different screens — improving both **performance** and **visual quality**.
+
+---
+
+### 🧠 Why Use `srcset`?
+
+Without `srcset`, a single image is served to all users regardless of their device. This can result in:
+
+- **Too large images on small screens** → Wasted bandwidth
+- **Too small images on high-res screens** → Blurry visuals
+
+With `srcset`, browsers pick the **best image** automatically.
+
+---
+
+### 🔧 Syntax Example (Using Resolutions)
+
+```html
+<img
+  src="image-1x.jpg"
+  srcset="image-1x.jpg 1x, image-2x.jpg 2x, image-3x.jpg 3x"
+  alt="Example Image"
+/>
+```
+
+- `1x`, `2x`, and `3x` refer to **pixel density** (DPR - device pixel ratio)
+- A device with a Retina screen (2x) will use `image-2x.jpg`
+
+---
+
+### 📐 Syntax Example (Using Widths)
+
+```html
+<img
+  src="image-small.jpg"
+  srcset="image-small.jpg 480w, image-medium.jpg 800w, image-large.jpg 1200w"
+  sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
+  alt="Responsive image by screen width"
+/>
+```
+
+- `480w`, `800w`, `1200w` specify the **width of each image in pixels**
+- `sizes` tells the browser **how wide the image will be displayed**
+- The browser selects the most appropriate image **before downloading**, saving bandwidth
+
+---
+
+### ✅ Benefits
+
+- 📱 **Mobile-first** optimization
+- 🚀 **Faster load times** on slow connections
+- 🔍 **Sharper images** on high-DPI screens
+- 🌐 **Better user experience** across devices
+
+---
+
+### 📝 Tip
+
+You should always include a fallback `src` attribute — it’s used by browsers that don’t support `srcset`, and as a default.
+
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
