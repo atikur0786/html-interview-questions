@@ -8,25 +8,36 @@ A curated list of HTML interview questions and answers.
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" alt="HTML5 Logo" width="200">
 </div>
 
+I'd be happy to help you add these new questions to your table of contents in the same format. Here's your updated table with the new questions added:
+
 ## Table of Contents
 
-| No. | Questions                                                                                                                                              |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1   | [What is HTML and what does it stand for?](#1-what-is-html-and-what-does-it-stand-for)                                                                 |
-| 2   | [What are the new features in HTML5?](#2-what-are-the-new-features-in-html5)                                                                           |
-| 3   | [What is the difference between HTML elements and tags?](#3-what-is-the-difference-between-html-elements-and-tags)                                     |
-| 4   | [What is semantic HTML and why is it important?](#4-what-is-semantic-html-and-why-is-it-important)                                                     |
-| 5   | [Explain the difference between block and inline elements](#5-explain-the-difference-between-block-and-inline-elements)                                |
-| 6   | [What is the purpose of the DOCTYPE declaration?](#6-what-is-the-purpose-of-the-doctype-declaration)                                                   |
-| 7   | [What are void elements in HTML?](#7-what-are-void-elements-in-html)                                                                                   |
-| 8   | [Explain the importance of the alt attribute for images](#8-explain-the-importance-of-the-alt-attribute-for-images)                                    |
-| 9   | [What is the difference between localStorage, sessionStorage, and cookies?](#9-what-is-the-difference-between-localstorage-sessionstorage-and-cookies) |
-| 10  | [How do you embed audio and video in a webpage?](#10-how-do-you-embed-audio-and-video-in-a-webpage)                                                    |
-| 11  | [Explain the Canvas element and its use cases](#11-explain-the-canvas-element-and-its-use-cases)                                                       |
-| 12  | [What are data attributes and how are they useful?](#12-what-are-data-attributes-and-how-are-they-useful)                                              |
-| 13  | [What is the purpose of the srcset attribute in images?](#13-what-is-the-purpose-of-the-srcset-attribute-in-images)                                    |
-| 14  | [Explain the difference between SVG and Canvas](#14-explain-the-difference-between-svg-and-canvas)                                                     |
-| 15  | [What are Web Components?](#15-what-are-web-components)                                                                                                |
+| No. | Questions                                                                                                                                                               |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [What is HTML and what does it stand for?](#1-what-is-html-and-what-does-it-stand-for)                                                                                  |
+| 2   | [What are the new features in HTML5?](#2-what-are-the-new-features-in-html5)                                                                                            |
+| 3   | [What is the difference between HTML elements and tags?](#3-what-is-the-difference-between-html-elements-and-tags)                                                      |
+| 4   | [What is semantic HTML and why is it important?](#4-what-is-semantic-html-and-why-is-it-important)                                                                      |
+| 5   | [Explain the difference between block and inline elements](#5-explain-the-difference-between-block-and-inline-elements)                                                 |
+| 6   | [What is the purpose of the DOCTYPE declaration?](#6-what-is-the-purpose-of-the-doctype-declaration)                                                                    |
+| 7   | [What are void elements in HTML?](#7-what-are-void-elements-in-html)                                                                                                    |
+| 8   | [Explain the importance of the alt attribute for images](#8-explain-the-importance-of-the-alt-attribute-for-images)                                                     |
+| 9   | [What is the difference between localStorage, sessionStorage, and cookies?](#9-what-is-the-difference-between-localstorage-sessionstorage-and-cookies)                  |
+| 10  | [How do you embed audio and video in a webpage?](#10-how-do-you-embed-audio-and-video-in-a-webpage)                                                                     |
+| 11  | [Explain the Canvas element and its use cases](#11-explain-the-canvas-element-and-its-use-cases)                                                                        |
+| 12  | [What are data attributes and how are they useful?](#12-what-are-data-attributes-and-how-are-they-useful)                                                               |
+| 13  | [What is the purpose of the srcset attribute in images?](#13-what-is-the-purpose-of-the-srcset-attribute-in-images)                                                     |
+| 14  | [Explain the difference between SVG and Canvas](#14-explain-the-difference-between-svg-and-canvas)                                                                      |
+| 15  | [What are Web Components?](#15-what-are-web-components)                                                                                                                 |
+| 16  | [What is the difference between progressive enhancement and graceful degradation?](#16-what-is-the-difference-between-progressive-enhancement-and-graceful-degradation) |
+| 17  | [What is the difference between defer and async attributes in the script tag?](#17-what-is-the-difference-between-defer-and-async-attributes-in-the-script-tag)         |
+| 18  | [How does HTML handle accessibility (ARIA roles, semantic tags)?](#18-how-does-html-handle-accessibility-aria-roles-semantic-tags)                                      |
+| 19  | [What is the difference between section, article, div, and aside elements?](#19-what-is-the-difference-between-section-article-div-and-aside-elements)                  |
+| 20  | [What are custom data attributes and how can you access them in JavaScript?](#20-what-are-custom-data-attributes-and-how-can-you-access-them-in-javascript)             |
+| 21  | [What are iframes and when should you use them carefully?](#21-what-are-iframes-and-when-should-you-use-them-carefully)                                                 |
+| 22  | [What are the different ways to optimize HTML performance?](#22-what-are-the-different-ways-to-optimize-html-performance)                                               |
+| 23  | [Explain Content Security Policy (CSP) and why it's important](#23-explain-content-security-policy-csp-and-why-its-important)                                           |
+| 24  | [What are microdata and how are they used in HTML?](#24-what-are-microdata-and-how-are-they-used-in-html)                                                               |
 
 ## 1. What is HTML and what does it stand for?
 
@@ -1354,6 +1365,319 @@ They help in **building UI components** that are **self-contained** and **framew
 ### 🔥 Quick Tip
 
 Even though Web Components are **framework-independent**, many modern frameworks (like Angular, Vue, and React) now provide **ways to integrate with Web Components** easily.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## 16. What is the difference between progressive enhancement and graceful degradation
+
+Both **progressive enhancement** and **graceful degradation** are strategies for building robust web applications that work across a wide range of browsers and devices. However, they take **different approaches**:
+
+---
+
+### Progressive Enhancement
+
+- **Definition**:  
+  Start with a **basic, functional version** of your website that works on all browsers, even the oldest ones. Then **enhance** the experience for newer, more capable browsers with additional features like JavaScript, animations, or advanced layouts.
+
+- **Approach**:
+
+  1. Build the **core functionality** first (basic HTML and CSS).
+  2. Add **enhanced features** (like JavaScript, fancy CSS) for browsers that support them.
+
+- **Example**:
+
+  - A basic HTML form that works without JavaScript.
+  - If JavaScript is available, you enhance it with client-side validation or auto-suggestions.
+
+- **Analogy**:  
+  Think of a cake — the basic cake is ready and edible for everyone, but if you have the tools (browsers), you can add icing, cherries, decorations!
+
+---
+
+### Graceful Degradation
+
+- **Definition**:  
+  Build the **full-featured, advanced version** of your website first, and then ensure that it **"degrades gracefully"** (still works acceptably) on older or less capable browsers.
+
+- **Approach**:
+
+  1. Create the **best experience** for modern browsers.
+  2. Add **fallbacks** or **simpler alternatives** for older browsers.
+
+- **Example**:
+
+  - A website using CSS Grid for layout.
+  - For older browsers that don't support Grid, provide a simpler, stacked layout using basic CSS.
+
+- **Analogy**:  
+  Imagine a luxury car with fancy features — if the luxury options fail, the car still runs and gets you to your destination.
+
+---
+
+### Key Differences
+
+| Aspect           | Progressive Enhancement                    | Graceful Degradation                        |
+| ---------------- | ------------------------------------------ | ------------------------------------------- |
+| Starting Point   | Basic functionality first                  | Advanced features first                     |
+| Focus            | Build up for better browsers               | Scale down for older browsers               |
+| Philosophy       | Inclusivity (everyone can access the core) | Priority on best experience, then fallback  |
+| Common Use Cases | Forms, content-heavy sites                 | Complex web apps with advanced interactions |
+
+---
+
+### Quick Summary
+
+- **Progressive Enhancement** = Start small, add improvements for better browsers.
+- **Graceful Degradation** = Start big, ensure it still works when features are missing.
+
+Both approaches aim to make sure **no user is completely blocked** from using the website, but **progressive enhancement** is usually preferred today, especially for **accessibility** and **mobile-first development**.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## 17. What is the difference between defer and async attributes in the script tag
+
+In HTML, when you include JavaScript using the `<script>` tag, you can use the `defer` and `async` attributes to control **when** and **how** the script is loaded and executed.  
+They both help to improve page loading performance but work differently.
+
+---
+
+### defer Attribute
+
+- **How it works**:
+
+  - The script is **downloaded in parallel** while the HTML page continues parsing.
+  - It **waits** until the HTML document is fully parsed, and then executes **in order** (based on how the script tags are written).
+
+- **Use case**:
+
+  - Perfect for scripts that depend on the complete HTML structure (like DOM manipulation).
+  - Useful when you want multiple scripts to execute in the **correct order**.
+
+- **Example**:
+
+```html
+<script src="script1.js" defer></script>
+<script src="script2.js" defer></script>
+```
+
+Both scripts download during HTML parsing but **execute after** the HTML is fully parsed, and **in order** (`script1.js` → `script2.js`).
+
+---
+
+### async Attribute
+
+- **How it works**:
+
+  - The script is **downloaded in parallel** while the HTML page continues parsing.
+  - It **executes immediately** once the download is complete, **even if** HTML parsing is still happening.
+  - No guarantee of execution order between multiple async scripts.
+
+- **Use case**:
+
+  - Good for independent scripts (like analytics, ads, tracking).
+  - Not suitable if one script depends on another or the DOM.
+
+- **Example**:
+
+```html
+<script src="analytics.js" async></script>
+```
+
+As soon as `analytics.js` finishes downloading, it executes, even if HTML is only half-parsed.
+
+---
+
+### Key Differences
+
+| Aspect             | defer                              | async                                   |
+| ------------------ | ---------------------------------- | --------------------------------------- |
+| Execution timing   | After HTML parsing                 | As soon as script is downloaded         |
+| Order of execution | Preserved (in order of appearance) | Not preserved                           |
+| HTML parsing       | Continues during script download   | Continues during script download        |
+| Use case           | DOM-dependent scripts              | Independent scripts (like tracking/ads) |
+
+---
+
+### Quick Tip
+
+> - **If the script depends on the DOM → use `defer`.**
+> - **If the script is independent → use `async`.**
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## 18. How does HTML handle accessibility (ARIA roles, semantic tags)
+
+Accessibility means making your website usable by **everyone**, including people with disabilities (like visual or hearing impairments).
+
+HTML provides **several built-in features** to improve accessibility:
+
+---
+
+### Semantic HTML
+
+- **What it is**:  
+  Using **meaningful tags** that describe the content they hold.
+- **Examples**:
+  - `<header>`, `<footer>`, `<nav>`, `<article>`, `<section>`, `<main>`, `<aside>`, etc.
+- **Why it matters**:
+
+  - Screen readers and assistive technologies **understand the structure** of the page better.
+  - Helps search engines (SEO) understand the importance of sections.
+
+- **Example**:
+
+```html
+<main>
+  <article>
+    <h1>Blog Post Title</h1>
+    <p>Blog content...</p>
+  </article>
+</main>
+```
+
+---
+
+### ARIA (Accessible Rich Internet Applications)
+
+- **What it is**:  
+  ARIA attributes are used to **add extra accessibility information** to HTML elements when native HTML is not enough.
+
+- **Common ARIA attributes**:
+
+  - `role`
+  - `aria-label`
+  - `aria-hidden`
+  - `aria-expanded`
+  - `aria-live`
+
+- **Example**:
+
+```html
+<button aria-label="Close menu">✖</button>
+```
+
+Screen readers will **read "Close menu"** even if the button only shows an icon.
+
+---
+
+### Key Concepts
+
+| Feature             | Purpose                                                          |
+| ------------------- | ---------------------------------------------------------------- |
+| Semantic tags       | Natural accessibility; no extra effort needed                    |
+| ARIA roles          | Add more descriptive information where native HTML is not enough |
+| alt attributes      | Describe images for screen readers                               |
+| Keyboard Navigation | Ensure all interactive elements are keyboard accessible          |
+
+---
+
+### Quick Best Practices
+
+- Always use **semantic tags** where possible.
+- Use **ARIA attributes** only when **semantic HTML is not enough**.
+- Make sure all functionality (like forms, menus) is **keyboard accessible**.
+- Add **meaningful alt text** for images.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## 19. What is the difference between section, article, div, and aside elements
+
+In HTML5, new **semantic tags** were introduced to create better, more meaningful page structures.
+
+---
+
+### `<section>`
+
+- **What it is**:  
+  Represents a **thematic grouping of content**.
+- **Use case**:  
+  Group related content together, like sections within a chapter.
+
+- **Example**:
+
+```html
+<section>
+  <h2>About Us</h2>
+  <p>Company information...</p>
+</section>
+```
+
+---
+
+### `<article>`
+
+- **What it is**:  
+  Represents **self-contained content** that could be distributed independently.
+
+- **Use case**:  
+  Blog posts, news articles, user comments, etc.
+
+- **Example**:
+
+```html
+<article>
+  <h2>Blog Post Title</h2>
+  <p>Blog content...</p>
+</article>
+```
+
+---
+
+### `<div>`
+
+- **What it is**:  
+  A **generic container** without any semantic meaning.
+- **Use case**:  
+  Use it when **no other semantic tag fits**. Often combined with classes for styling/layout.
+
+- **Example**:
+
+```html
+<div class="container">
+  <p>Some content</p>
+</div>
+```
+
+---
+
+### `<aside>`
+
+- **What it is**:  
+  Represents content **indirectly related** to the main content.
+
+- **Use case**:  
+  Sidebars, advertisements, related links, author bios, etc.
+
+- **Example**:
+
+```html
+<aside>
+  <h2>Related Posts</h2>
+  <ul>
+    <li>Post 1</li>
+    <li>Post 2</li>
+  </ul>
+</aside>
+```
+
+---
+
+### Summary Table
+
+| Element     | Purpose                            | Typical Use Case                       |
+| ----------- | ---------------------------------- | -------------------------------------- |
+| `<section>` | Group related content              | Page sections like "Services", "About" |
+| `<article>` | Self-contained independent content | Blog posts, news articles              |
+| `<div>`     | Generic container                  | Layout/styling wrapper                 |
+| `<aside>`   | Related but not main content       | Sidebars, related links, ads           |
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
