@@ -1682,3 +1682,195 @@ In HTML5, new **semantic tags** were introduced to create better, more meaningfu
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
+
+## 20. What are custom data attributes and how can you access them in JavaScript?
+
+### 🔹 What Are Custom Data Attributes?
+
+**Custom data attributes** are special attributes in HTML that allow you to store extra information directly on HTML elements without affecting their presentation or behavior.
+
+They are written using the `data-` prefix:
+
+```html
+<div data-user-id="42" data-role="admin">John Doe</div>
+```
+
+In the example above:
+
+- `data-user-id` and `data-role` are custom data attributes.
+- These attributes can be easily accessed and manipulated via JavaScript.
+
+---
+
+### 🔹 Why Use Data Attributes?
+
+- To **store metadata** on elements that JavaScript can later read or modify.
+- Keeps HTML **clean and semantic** — doesn't misuse `class` or `id` for data.
+- Useful for scenarios like:
+  - Passing configuration to scripts
+  - Storing element-specific data
+  - Lightweight state tracking without global variables
+
+---
+
+### 🔹 Accessing Data Attributes in JavaScript
+
+There are two main ways:
+
+#### 1. Using `.dataset` (recommended modern approach)
+
+```javascript
+const element = document.querySelector("div");
+console.log(element.dataset.userId); // "42"
+console.log(element.dataset.role); // "admin"
+```
+
+💡 `data-user-id` becomes `dataset.userId`  
+ Hyphenated names become **camelCase** keys in `dataset`.
+
+#### 2. Using `getAttribute` and `setAttribute`
+
+```javascript
+const element = document.querySelector("div");
+console.log(element.getAttribute("data-user-id")); // "42"
+
+// To set:
+element.setAttribute("data-user-id", "99");
+```
+
+This method provides more control and is useful when reading arbitrary or dynamic attribute names.
+
+---
+
+### 🔹 Example in Practice
+
+```html
+<button data-product-id="123" onclick="addToCart(this)">Add to Cart</button>
+```
+
+```javascript
+function addToCart(button) {
+  const productId = button.dataset.productId;
+  console.log(`Adding product ${productId} to cart`);
+}
+```
+
+---
+
+### 📝 Summary
+
+| Feature         | Description                                                   |
+| --------------- | ------------------------------------------------------------- |
+| Starts with     | `data-` prefix                                                |
+| Access (Modern) | `element.dataset.keyName` (camelCase)                         |
+| Access (Legacy) | `getAttribute("data-key-name")`                               |
+| Use Cases       | Metadata storage, dynamic scripting, element-specific configs |
+| Benefits        | Semantic, readable, no need to overload classes or IDs        |
+
+---
+
+✅ Custom data attributes are a **clean and powerful way** to attach data to elements for use in scripts, helping keep your UI logic modular and maintainable.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## 21. What are iframes and when should you use them carefully?
+
+### 🔹 What is an `<iframe>`?
+
+The `<iframe>` (short for **inline frame**) element allows you to **embed another HTML document** inside the current page. It's like embedding a separate browser window or webpage within your own.
+
+#### Example:
+
+```html
+<iframe src="https://example.com" width="600" height="400"></iframe>
+```
+
+This will display the `example.com` website inside a 600x400 container.
+
+---
+
+### 🔹 Common Use Cases
+
+- Embedding YouTube videos, Google Maps, or other third-party content.
+- Displaying external websites or internal documents in a dashboard.
+- Sandbox environments (e.g., for previews or interactive code examples).
+
+---
+
+### 🔹 Key Attributes of `<iframe>`
+
+| Attribute         | Description                                                                  |
+| ----------------- | ---------------------------------------------------------------------------- |
+| `src`             | URL of the page to embed                                                     |
+| `width`/`height`  | Dimensions of the iframe container                                           |
+| `sandbox`         | Enables extra security restrictions on the content (like preventing scripts) |
+| `allowfullscreen` | Allows the iframe to display content in fullscreen mode                      |
+| `loading="lazy"`  | Defers loading until the iframe is near the viewport (improves performance)  |
+
+---
+
+### ⚠️ Why Should `<iframe>` Be Used Carefully?
+
+Despite being powerful, iframes come with **important considerations and potential downsides**:
+
+#### 1. **Security Risks**
+
+- **Cross-site scripting (XSS)** vulnerabilities if you allow untrusted sources.
+- Embedded third-party content could try to access or manipulate your site unless properly sandboxed.
+
+#### 2. **Performance Overhead**
+
+- Each iframe is an isolated browsing context with its own document and resources.
+- This can significantly **slow down page load time**.
+
+#### 3. **SEO & Accessibility**
+
+- Content in iframes is generally **not indexed by search engines**.
+- Screen readers might **not access** iframe content properly unless described clearly.
+
+#### 4. **Cross-Origin Limitations**
+
+- Scripts in the parent cannot access iframe content from a different domain due to **same-origin policy**.
+- Embedding some sites (like banking portals) may be blocked by headers like `X-Frame-Options`.
+
+---
+
+### 🔐 Security Best Practices
+
+If you must use an iframe, follow these safety practices:
+
+- Use the `sandbox` attribute:
+
+  ```html
+  <iframe src="..." sandbox></iframe>
+  ```
+
+  Or configure specific restrictions:
+
+  ```html
+  <iframe src="..." sandbox="allow-scripts allow-forms"></iframe>
+  ```
+
+- Avoid embedding untrusted or user-generated URLs directly.
+- Set `loading="lazy"` to defer loading for better performance.
+
+---
+
+### 📝 Summary
+
+| Feature     | Description                                           |
+| ----------- | ----------------------------------------------------- |
+| Purpose     | Embeds external/internal HTML documents inside a page |
+| Common Uses | Videos, maps, dashboards, previews                    |
+| Risks       | Security, performance, accessibility, SEO             |
+| Safe Usage  | Use `sandbox`, `loading="lazy"`, and validate sources |
+
+---
+
+✅ Use `<iframe>` **only when necessary**, and always with proper security measures — especially for third-party or dynamic content.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
