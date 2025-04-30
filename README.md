@@ -8,8 +8,6 @@ A curated list of HTML interview questions and answers.
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" alt="HTML5 Logo" width="200">
 </div>
 
-I'd be happy to help you add these new questions to your table of contents in the same format. Here's your updated table with the new questions added:
-
 ## Table of Contents
 
 | No. | Questions                                                                                                                                                               |
@@ -1870,6 +1868,230 @@ If you must use an iframe, follow these safety practices:
 ---
 
 ✅ Use `<iframe>` **only when necessary**, and always with proper security measures — especially for third-party or dynamic content.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## 22. What are the different ways to optimize HTML performance?
+
+Optimizing HTML performance is crucial for improving **page load speed**, **user experience**, and **SEO rankings**. While much of performance depends on CSS, JavaScript, and server-side strategies, **efficient HTML structure and usage** lay the foundation for a fast and accessible web page.
+
+---
+
+### 🔹 1. **Minimize HTML Size**
+
+- **Remove unnecessary whitespace**, comments, and redundant tags.
+- Use tools like [HTMLMinifier](https://kangax.github.io/html-minifier/) or build tools like Webpack, Gulp, etc., for minification.
+
+---
+
+### 🔹 2. **Load Resources Efficiently**
+
+- Use the `defer` or `async` attribute in `<script>` tags to prevent render-blocking.
+
+  ```html
+  <script src="main.js" defer></script>
+  ```
+
+- Load non-critical styles or fonts asynchronously to avoid blocking the render path.
+
+---
+
+### 🔹 3. **Use Semantic HTML**
+
+- Semantic tags (`<section>`, `<article>`, `<nav>`, etc.) improve accessibility and SEO, making parsing and rendering faster for search engines and screen readers.
+
+---
+
+### 🔹 4. **Lazy Load Assets**
+
+- Use `loading="lazy"` on images and iframes to delay loading until they’re needed.
+  ```html
+  <img src="image.jpg" loading="lazy" alt="..." />
+  ```
+
+---
+
+### 🔹 5. **Use CDNs and Caching**
+
+- Link to CDN-hosted versions of commonly used libraries (e.g., Bootstrap, jQuery).
+- Use `<meta>` tags and response headers for efficient browser caching.
+
+---
+
+### 🔹 6. **Reduce Number of DOM Elements**
+
+- Avoid overly nested or redundant divs (`divitis`).
+- A smaller DOM tree improves parsing and rendering time.
+
+---
+
+### 🔹 7. **Optimize Image Delivery**
+
+- Use modern formats like **WebP** or **AVIF**.
+- Serve appropriately sized images for different devices using the `srcset` attribute.
+  ```html
+  <img
+    src="img.jpg"
+    srcset="img-small.jpg 480w, img-large.jpg 1200w"
+    alt="..."
+  />
+  ```
+
+---
+
+### 🔹 8. **Preload Key Resources**
+
+- Use `<link rel="preload">` for fonts, hero images, or key assets to load them earlier.
+  ```html
+  <link
+    rel="preload"
+    href="font.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  ```
+
+---
+
+### 🔹 9. **Avoid Inline Styles and Scripts**
+
+- Place CSS in external files and load early.
+- Avoid inline JavaScript when possible to promote caching and separation of concerns.
+
+---
+
+### 🔹 10. **Use Meta Tags for Mobile Optimization**
+
+- Ensure responsive rendering with:
+  ```html
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  ```
+
+---
+
+### ✅ Summary Table
+
+| Strategy                 | Benefit                             |
+| ------------------------ | ----------------------------------- |
+| Minify HTML              | Reduces file size                   |
+| `defer`, `async` scripts | Avoids render-blocking              |
+| Lazy loading             | Improves initial load time          |
+| Semantic tags            | Boosts accessibility and SEO        |
+| CDN & Caching            | Faster delivery of common resources |
+| `srcset`, WebP images    | Efficient image delivery            |
+| Preload critical assets  | Speeds up resource priority loading |
+| Avoid excessive DOM      | Faster parsing/rendering            |
+| Responsive meta tags     | Better experience on mobile devices |
+
+---
+
+Proper HTML performance optimization is about writing **clean, minimal, semantic, and responsive** markup while working in harmony with CSS, JS, and server strategies.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## 23. Explain Content Security Policy (CSP) and why it’s important
+
+**Content Security Policy (CSP)** is a security standard introduced to **prevent a wide range of attacks** such as **Cross-Site Scripting (XSS)**, **clickjacking**, and **code injection attacks** that can be caused by malicious content being executed in the browser.
+
+---
+
+### 🔐 What is CSP?
+
+CSP is implemented via an HTTP response header (`Content-Security-Policy`) that defines **which sources of content are considered trusted** by the browser.
+
+The browser uses this policy to control:
+
+- What JavaScript can run
+- What styles can be applied
+- What images and media can be loaded
+- Whether inline scripts/styles are allowed
+- Whether external domains can embed the site, etc.
+
+---
+
+### 🧠 Why is CSP important?
+
+CSP is crucial for:
+
+- **Preventing Cross-Site Scripting (XSS)**: A common vulnerability where attackers inject malicious scripts into pages.
+- **Restricting third-party content**: Helps limit what external domains can be used for scripts, styles, and other resources.
+- **Reducing data exfiltration risk**: Prevents unauthorized access or transmission of user data by blocking suspicious endpoints.
+- **Clickjacking protection**: Prevents the site from being embedded in `<iframe>` without permission.
+
+---
+
+### 🧾 Example of a CSP Header
+
+```http
+Content-Security-Policy: default-src 'self'; script-src 'self' https://apis.example.com; object-src 'none'; frame-ancestors 'none';
+```
+
+This policy:
+
+- Allows content (default) only from the same origin (`'self'`)
+- Allows JavaScript only from self and `apis.example.com`
+- Blocks all plugins (`object-src 'none'`)
+- Disallows embedding in `<iframe>` (`frame-ancestors 'none'`)
+
+---
+
+### ✍️ Inline Example (Meta tag for testing)
+
+You can also define CSP inside your HTML (mainly for testing, not recommended for production):
+
+```html
+<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'self'; script-src 'self';"
+/>
+```
+
+---
+
+### 🧷 CSP Directives Overview
+
+| Directive         | Purpose                                                   |
+| ----------------- | --------------------------------------------------------- |
+| `default-src`     | Fallback for other directives if not explicitly defined   |
+| `script-src`      | Controls JavaScript source origins                        |
+| `style-src`       | Controls CSS source origins                               |
+| `img-src`         | Controls image sources                                    |
+| `font-src`        | Controls font sources                                     |
+| `object-src`      | Controls Flash and other plugin content                   |
+| `frame-ancestors` | Controls who can embed the content (e.g., via `<iframe>`) |
+| `connect-src`     | Controls AJAX/fetch/WebSocket destinations                |
+
+---
+
+### ✅ Benefits of CSP
+
+- Acts as a **powerful mitigation** against client-side attacks
+- Increases **trustworthiness** of your site
+- Encourages developers to follow best practices (no inline JS, trusted sources only)
+- Offers **reporting mechanisms** for potential policy violations
+
+---
+
+### 🛠️ CSP Reporting (Optional but Useful)
+
+You can monitor violations with:
+
+```http
+Content-Security-Policy-Report-Only: default-src 'self'; report-uri /csp-violation-report-endpoint/
+```
+
+This won't block anything but will log violations, helping in tuning policies safely.
+
+---
+
+### Summary
+
+> **Content Security Policy (CSP)** is a powerful browser security feature that helps reduce the risk of XSS and data injection attacks by restricting the sources of executable content on a web page.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
