@@ -2096,3 +2096,86 @@ This won't block anything but will log violations, helping in tuning policies sa
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
+
+## 24. What are microdata and how are they used in HTML?
+
+**Microdata** is a specification introduced in HTML5 that allows you to **embed machine-readable metadata** within existing HTML content. It helps **search engines and other applications better understand the content** of your web pages and improve how it’s displayed in search results.
+
+---
+
+### 🔍 Why use Microdata?
+
+While HTML describes the structure and presentation of web content, **microdata adds semantic meaning** to the content. This structured data can enhance **SEO** and enable **rich snippets** (e.g., star ratings, product info, events, breadcrumbs) in search engine results.
+
+---
+
+### 🧩 How Microdata Works
+
+Microdata uses:
+
+- `itemscope`: Defines the scope of the item.
+- `itemtype`: Specifies the vocabulary (usually a URL from [Schema.org](https://schema.org)).
+- `itemprop`: Defines the properties of that item.
+
+---
+
+### 📦 Example: Product Schema
+
+```html
+<div itemscope itemtype="https://schema.org/Product">
+  <h2 itemprop="name">Wireless Headphones</h2>
+  <img itemprop="image" src="headphones.jpg" alt="Wireless Headphones" />
+  <p itemprop="description">High-quality noise-cancelling headphones.</p>
+  <span itemprop="brand">SoundMax</span>
+  <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+    Price: <span itemprop="priceCurrency" content="USD">$</span
+    ><span itemprop="price">99.99</span>
+    <link itemprop="availability" href="https://schema.org/InStock" />In Stock
+  </div>
+</div>
+```
+
+---
+
+### 🔧 Key Attributes
+
+| Attribute   | Description                                                          |
+| ----------- | -------------------------------------------------------------------- |
+| `itemscope` | Marks an element as a microdata item                                 |
+| `itemtype`  | A URL that defines the type of item (usually from schema.org)        |
+| `itemprop`  | Describes a property of the item                                     |
+| `itemid`    | Assigns a unique global identifier to the item (optional)            |
+| `itemref`   | Refers to other elements that have more properties for the same item |
+
+---
+
+### ✅ Benefits of Using Microdata
+
+- **Improved SEO**: Helps search engines better index and categorize content
+- **Rich snippets**: Enables enhanced search listings with visual cues
+- **Standardized**: Uses a well-known vocabulary like [Schema.org](https://schema.org)
+- **No extra files**: Embedded directly in HTML, unlike JSON-LD which is separate
+
+---
+
+### 🆚 Microdata vs. Alternatives
+
+| Format    | Embedded in HTML? | Human-readable?  | Recommended by Google |
+| --------- | ----------------- | ---------------- | --------------------- |
+| Microdata | ✅ Yes            | ✅ Yes           | ⚠️ Acceptable         |
+| RDFa      | ✅ Yes            | ⚠️ Less readable | ⚠️ Acceptable         |
+| JSON-LD   | ❌ No             | ✅ Yes           | ✅ **Preferred**      |
+
+> 🔹 **Note**: Google currently prefers **JSON-LD** for structured data, but microdata is still supported.
+
+---
+
+### 📌 Summary
+
+> **Microdata** is a way to label and structure your HTML content with meaningful metadata using the `itemscope`, `itemtype`, and `itemprop` attributes. It helps search engines display your content more richly and accurately in search results.
+
+---
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
