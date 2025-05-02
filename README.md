@@ -36,6 +36,12 @@ A curated list of HTML interview questions and answers.
 | 22  | [What are the different ways to optimize HTML performance?](#22-what-are-the-different-ways-to-optimize-html-performance)                                               |
 | 23  | [Explain Content Security Policy (CSP) and why it's important](#23-explain-content-security-policy-csp-and-why-its-important)                                           |
 | 24  | [What are microdata and how are they used in HTML?](#24-what-are-microdata-and-how-are-they-used-in-html)                                                               |
+| 25  | [What are the different types of HTML form controls and how are they used?](#25-what-are-the-different-types-of-html-form-controls-and-how-are-they-used)               |
+| 26  | [What is the Shadow DOM and how does it relate to Web Components?](#26-what-is-the-shadow-dom-and-how-does-it-relate-to-web-components)                                 |
+| 27  | [What is the difference between innerHTML, textContent, and innerText?](#27-what-is-the-difference-between-innerhtml-textcontent-and-innertext)                         |
+| 28  | [How does HTML parsing work in the browser?](#28-how-does-html-parsing-work-in-the-browser)                                                                             |
+| 29  | [What is the difference between DOMContentLoaded and load events?](#29-what-is-the-difference-between-domcontentloaded-and-load-events)                                 |
+| 30  | [How do you ensure cross-browser compatibility in HTML?](#30-how-do-you-ensure-cross-browser-compatibility-in-html)                                                     |
 
 ## 1. What is HTML and what does it stand for?
 
@@ -2174,7 +2180,71 @@ Microdata uses:
 
 > **Microdata** is a way to label and structure your HTML content with meaningful metadata using the `itemscope`, `itemtype`, and `itemprop` attributes. It helps search engines display your content more richly and accurately in search results.
 
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## 25. What are the different types of HTML form controls and how are they used?
+
+HTML provides a variety of **form controls** that allow users to input data in different formats. These controls are created using the `<input>`, `<textarea>`, `<select>`, `<button>`, and other form-related elements. Each form control serves a specific purpose and enhances the user experience by providing appropriate input mechanisms.
+
 ---
+
+### 📝 Common HTML Form Controls:
+
+| Control                   | Description                                           | Example Usage                      |
+| ------------------------- | ----------------------------------------------------- | ---------------------------------- |
+| `<input type="text">`     | Single-line text input                                | Username, Name                     |
+| `<input type="password">` | Hides input characters                                | Password field                     |
+| `<input type="email">`    | Validates email format                                | Email input                        |
+| `<input type="number">`   | Numeric input with optional min/max                   | Age, Quantity                      |
+| `<input type="tel">`      | Telephone number input                                | Phone number                       |
+| `<input type="url">`      | Validates URL format                                  | Website input                      |
+| `<input type="checkbox">` | Allows multi-select of options                        | Agree to terms, Multiple interests |
+| `<input type="radio">`    | Select one option from a group                        | Gender, Payment method             |
+| `<input type="date">`     | Date picker UI                                        | Birthdate                          |
+| `<input type="time">`     | Time selector                                         | Schedule time                      |
+| `<input type="range">`    | Slider for numeric input                              | Volume, Price range                |
+| `<input type="file">`     | File upload input                                     | Upload resume/image                |
+| `<textarea>`              | Multi-line text input                                 | Comments, Feedback                 |
+| `<select>` and `<option>` | Dropdown menu for single/multiple selection           | Country, Language                  |
+| `<button>`                | Clickable button for submitting or triggering actions | Submit, Cancel                     |
+
+---
+
+### 🔧 How Are They Used?
+
+They are usually grouped inside a `<form>` tag:
+
+```html
+<form action="/submit" method="POST">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="userEmail" required />
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="userPass" />
+
+  <label for="country">Country:</label>
+  <select id="country" name="country">
+    <option value="india">India</option>
+    <option value="usa">USA</option>
+  </select>
+
+  <label
+    ><input type="checkbox" name="subscribe" /> Subscribe to newsletter</label
+  >
+
+  <button type="submit">Register</button>
+</form>
+```
+
+---
+
+### ✅ Benefits:
+
+- Improves **form usability** and **data accuracy**
+- Enables **semantic input types** which trigger device-specific keyboards (like numeric on mobile)
+- Helps with **built-in validation** (e.g., `type="email"`)
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
