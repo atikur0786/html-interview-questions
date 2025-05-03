@@ -2249,3 +2249,82 @@ They are usually grouped inside a `<form>` tag:
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
+
+## 26. What is the Shadow DOM and how does it relate to Web Components?
+
+The **Shadow DOM** is a browser technology that allows developers to encapsulate a portion of the DOM tree so that its structure, style, and behavior are **isolated** from the rest of the document. It is a key part of the **Web Components** standard, helping to create modular, reusable, and maintainable custom elements without worrying about CSS or JS collisions.
+
+---
+
+### 📦 What is the Shadow DOM?
+
+The Shadow DOM lets you attach a hidden DOM tree (called a **shadow tree**) to an element. This tree is **encapsulated** from the main document DOM — meaning:
+
+- Styles in the shadow tree don’t leak out
+- Styles from the main page don’t affect the shadow tree
+
+It is created using JavaScript like this:
+
+```javascript
+const shadowHost = document.querySelector("#my-element");
+const shadowRoot = shadowHost.attachShadow({ mode: "open" });
+
+shadowRoot.innerHTML = `
+  <style>
+    p { color: red; }
+  </style>
+  <p>This is inside shadow DOM</p>
+`;
+```
+
+---
+
+### 🧩 How It Relates to Web Components
+
+Web Components consist of **four** main technologies:
+
+1. **Custom Elements** – define your own HTML tags
+2. **Shadow DOM** – encapsulate the component’s internal DOM
+3. **HTML Templates** – reusable markup with `<template>`
+4. **ES Modules** – modular JavaScript for components
+
+The **Shadow DOM** gives Web Components the power to:
+
+- Keep internal HTML structure private
+- Apply scoped styles that don’t conflict with global styles
+- Prevent external scripts or styles from breaking component behavior
+
+---
+
+### ✅ Benefits of Using Shadow DOM in Web Components
+
+- **Isolation** – Fully scoped styles and structure
+- **Reusability** – Components behave the same in any context
+- **Maintainability** – Less debugging due to style bleeding
+
+---
+
+### 🧠 Example with Web Component
+
+```javascript
+class MyButton extends HTMLElement {
+  constructor() {
+    super();
+    const shadow = this.attachShadow({ mode: "open" });
+    shadow.innerHTML = `
+      <style>
+        button { background: black; color: white; }
+      </style>
+      <button>Click Me</button>
+    `;
+  }
+}
+
+customElements.define("my-button", MyButton);
+```
+
+The `my-button` element now renders a styled button with **complete encapsulation**.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
