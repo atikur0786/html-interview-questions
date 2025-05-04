@@ -2328,3 +2328,84 @@ The `my-button` element now renders a styled button with **complete encapsulatio
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
+
+## 27. What is the difference between `innerHTML`, `textContent`, and `innerText`?
+
+These three properties in JavaScript are used to access or modify the content inside HTML elements, but they behave differently depending on **content type**, **HTML structure**, and **performance** needs.
+
+---
+
+### 🔸 1. `innerHTML`
+
+- **Returns or sets** the **HTML content** inside an element.
+- Parses the string as **HTML**, so it includes **tags and nested elements**.
+
+```javascript
+const el = document.getElementById("example");
+console.log(el.innerHTML);
+// Outputs: "<strong>Hello</strong> World"
+
+el.innerHTML = "<em>Updated</em> Text";
+```
+
+✅ Use when you want to **read or insert HTML markup**  
+⚠️ Vulnerable to **XSS attacks** if you're injecting user-generated content
+
+---
+
+### 🔸 2. `textContent`
+
+- Gets or sets the **pure text** inside an element.
+- Ignores all HTML tags and does **not render HTML**.
+
+```javascript
+const el = document.getElementById("example");
+console.log(el.textContent);
+// Outputs: "Hello World"
+
+el.textContent = "<b>New Text</b>";
+// Displays: <b>New Text</b> (as plain text)
+```
+
+✅ Safer and faster for inserting text (no parsing involved)  
+🚫 Not affected by CSS (e.g., `display: none` content is included)
+
+---
+
+### 🔸 3. `innerText`
+
+- Like `textContent` but more **visual and layout-aware**.
+- Respects **CSS styles** such as `display: none` and **line breaks**.
+
+```javascript
+const el = document.getElementById("example");
+console.log(el.innerText);
+// Outputs only visible text
+
+el.innerText = "Updated Text";
+```
+
+✅ Use when you want the text **as displayed to the user**  
+⚠️ Slower than `textContent` as it triggers reflow and layout calculations
+
+---
+
+### 🔍 Summary Table
+
+| Property      | Includes HTML Tags | Ignores Hidden Elements | Safer from XSS | Parses HTML |
+| ------------- | ------------------ | ----------------------- | -------------- | ----------- |
+| `innerHTML`   | ✅ Yes             | ❌ No                   | ❌ No          | ✅ Yes      |
+| `textContent` | ❌ No              | ❌ No                   | ✅ Yes         | ❌ No       |
+| `innerText`   | ❌ No              | ✅ Yes                  | ✅ Yes         | ❌ No       |
+
+---
+
+### 🚀 When to Use What?
+
+- Use `innerHTML` when inserting or reading actual **HTML structure**
+- Use `textContent` when working with **safe raw text**
+- Use `innerText` when you care about **visible content only**
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
