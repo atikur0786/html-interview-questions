@@ -2409,3 +2409,102 @@ el.innerText = "Updated Text";
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
+
+## 28. How Does HTML Parsing Work in the Browser?
+
+When you load a web page, the browser goes through a **parsing process** to transform your HTML code into something visual and interactive. This process happens in stages and involves several components of the browser engine.
+
+---
+
+### 🔄 Step-by-Step Breakdown of HTML Parsing:
+
+#### 1. **Loading Begins**
+
+- The browser sends an HTTP request to the server for the HTML file.
+- Once the response arrives, it starts reading the HTML **top to bottom**, even before the full document is downloaded.
+
+---
+
+#### 2. **Tokenization**
+
+- The HTML is broken into **tokens** (e.g., start tags like `<div>`, text nodes, attributes).
+- Each token represents a meaningful unit for the parser to understand.
+
+---
+
+#### 3. **Tree Construction (DOM)**
+
+- Tokens are used to build a **DOM (Document Object Model)** tree.
+- This tree is a **hierarchical representation** of the HTML document.
+
+```html
+<body>
+  <h1>Hello</h1>
+  <p>World</p>
+</body>
+```
+
+Is converted into:
+
+```plaintext
+Document
+ └── html
+      └── body
+            ├── h1 → "Hello"
+            └── p → "World"
+```
+
+---
+
+#### 4. **Handling Scripts and Styles**
+
+- When the parser encounters a `<script>`:
+  - If it doesn't have `async` or `defer`, parsing **pauses** until the script is downloaded and executed.
+- `<style>` tags are also parsed, and CSSOM (CSS Object Model) is built in parallel.
+
+---
+
+#### 5. **Render Tree Creation**
+
+- DOM + CSSOM → Render Tree  
+  This tree contains **only visible elements**, styled and ready for layout.
+
+---
+
+#### 6. **Layout and Painting**
+
+- The render tree is used to **calculate layout** (position, size).
+- Then it's **painted** to the screen pixel by pixel.
+
+---
+
+### ⚠️ Parsing is Progressive
+
+- Browsers **don’t wait** for the full HTML document to load before starting rendering.
+- They progressively parse and render content for faster user experience.
+
+---
+
+### 🔑 Summary
+
+| Phase                 | Purpose                                   |
+| --------------------- | ----------------------------------------- |
+| Tokenization          | Breaking HTML into meaningful tokens      |
+| Tree Construction     | Creating the DOM from tokens              |
+| Script/Style Handling | Pausing/resuming parsing as needed        |
+| Render Tree Build     | Combining DOM and CSSOM                   |
+| Layout & Paint        | Positioning and drawing content on screen |
+
+---
+
+### 🚀 Pro Tip:
+
+To speed up parsing and rendering:
+
+- Use `defer` for scripts
+- Minimize deeply nested HTML
+- Avoid large inline styles/scripts at the top of your HTML
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
