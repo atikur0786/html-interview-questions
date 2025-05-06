@@ -2508,3 +2508,70 @@ To speed up parsing and rendering:
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
+
+## 29. What is the Difference Between `DOMContentLoaded` and `load` Events?
+
+Both `DOMContentLoaded` and `load` are important browser events that signal different stages of the page loading process — but they fire at different times and serve different purposes.
+
+---
+
+### 🧠 `DOMContentLoaded` Event
+
+#### ✅ When It Fires:
+
+- **As soon as the initial HTML document is fully loaded and parsed**, without waiting for stylesheets, images, or subframes to finish loading.
+
+#### 🔧 Use Case:
+
+- Ideal for running JavaScript that manipulates the DOM.
+- Useful when you want to access or modify page elements **as soon as the DOM is ready**.
+
+#### 💡 Example:
+
+```javascript
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM is fully loaded and parsed!");
+});
+```
+
+---
+
+### 🧠 `load` Event
+
+#### ✅ When It Fires:
+
+- Only after the **entire page**, including **all dependent resources** (images, CSS, scripts, iframes), has fully loaded.
+
+#### 🔧 Use Case:
+
+- Use this when your logic depends on external resources being fully available (e.g., image dimensions, fonts).
+
+#### 💡 Example:
+
+```javascript
+window.addEventListener("load", function () {
+  console.log("Everything including images and stylesheets is loaded!");
+});
+```
+
+---
+
+### 🔍 Key Differences
+
+| Feature               | `DOMContentLoaded`                  | `load`                               |
+| --------------------- | ----------------------------------- | ------------------------------------ |
+| Fires when            | HTML is parsed and DOM is built     | Full page and all assets are loaded  |
+| Waits for images/CSS? | ❌ No                               | ✅ Yes                               |
+| Faster trigger time   | ✅ Yes                              | ❌ No                                |
+| Common use case       | Initialize DOM manipulation scripts | Image-dependent scripts or analytics |
+
+---
+
+### 📝 Summary
+
+- Use `DOMContentLoaded` for **faster interactivity**.
+- Use `load` if your script depends on **all assets being loaded**.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
