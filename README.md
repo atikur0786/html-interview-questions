@@ -2575,3 +2575,96 @@ window.addEventListener("load", function () {
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
+
+## 30. How Do You Ensure Cross-Browser Compatibility in HTML?
+
+Ensuring cross-browser compatibility means making sure that your website or application **looks and behaves consistently across different browsers** (like Chrome, Firefox, Safari, Edge, etc.). Since browsers may interpret HTML/CSS/JS slightly differently, developers need to take deliberate steps to minimize inconsistencies.
+
+---
+
+### ✅ Best Practices for Ensuring Cross-Browser Compatibility
+
+#### 1. **Use Valid, Semantic HTML**
+
+- Follow the latest HTML standards and validate your code using the [W3C Validator](https://validator.w3.org/).
+- Semantic tags like `<section>`, `<article>`, `<nav>`, and `<header>` improve structure and clarity, and are more consistently handled by browsers.
+
+#### 2. **Reset or Normalize CSS**
+
+- Browsers have different default styles. Use a CSS reset or a normalization stylesheet like [`normalize.css`](https://necolas.github.io/normalize.css/) to create consistency.
+
+```css
+/* Example of basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```
+
+#### 3. **Use Feature Detection, Not Browser Detection**
+
+- Instead of checking for a browser, check if the feature exists using tools like [Modernizr](https://modernizr.com/).
+
+```javascript
+if ("geolocation" in navigator) {
+  // Safe to use geolocation
+}
+```
+
+#### 4. **Test on Multiple Browsers and Devices**
+
+- Regularly test your site on different browsers and screen sizes manually or with tools like:
+  - BrowserStack
+  - CrossBrowserTesting
+  - LambdaTest
+
+#### 5. **Graceful Degradation and Progressive Enhancement**
+
+- **Graceful Degradation**: Build for modern browsers, then tweak for older ones.
+- **Progressive Enhancement**: Build a basic version first, then add enhancements for newer features.
+
+#### 6. **Avoid Browser-Specific Hacks**
+
+- Try to use standards-compliant techniques rather than browser-specific prefixes or hacks.
+- Use vendor prefixes cautiously, e.g.:
+
+```css
+.example {
+  -webkit-user-select: none; /* Safari/Chrome */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none; /* Standard */
+}
+```
+
+#### 7. **Use Polyfills/Shims**
+
+- Use JavaScript polyfills to add missing functionality to older browsers (e.g., `fetch`, `Promise`, `Object.assign`).
+- Common polyfills:
+  - [Polyfill.io](https://polyfill.io)
+  - [core-js](https://github.com/zloirock/core-js)
+
+#### 8. **Follow Responsive Design Principles**
+
+- Use media queries and flexible layouts so your site adjusts well to all screen sizes and browsers.
+
+---
+
+### 🧪 Tools to Help with Compatibility
+
+- **Can I Use**: [caniuse.com](https://caniuse.com/) – check browser support for features.
+- **Autoprefixer**: Automatically adds required vendor prefixes.
+- **Linting Tools**: ESLint, Stylelint to catch potential compatibility issues.
+
+---
+
+### 📌 Summary
+
+To ensure cross-browser compatibility:
+
+- Write semantic, valid HTML.
+- Normalize styles.
+- Use feature detection.
+- Test thoroughly.
+- Enhance progressively.
