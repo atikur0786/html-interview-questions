@@ -1,11 +1,14 @@
 # HTML Interview Questions
 
-A curated list of HTML interview questions and answers.
-
-**Note:** This repository is continuously updated with new questions and answers.
-
 <div align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" alt="HTML5 Logo" width="200">
+
+  <p>A curated list of HTML interview questions and answers.</p>
+
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+
 </div>
 
 ## Table of Contents
